@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trove"
+version = "0.0.1"
+authors = [
+    { name = "Reza Esfandiarpoor", email = "reza_esfandiarpoor@brown.edu" },
+]
+description = "A Flexible Toolkit for Dense Retrieval"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+
+requires-python = ">=3.10"
+dependencies = [
+    "datasets >= 2.7.0",
+    "accelerate",
+    "huggingface_hub",
+    "numpy >= 1.26.0",
+    "polars >= 1.13.0",
+    "pyarrow >= 16.1.0",
+    "pytrec_eval",
+    "torch >= 2.0.0",
+    "tqdm",
+    "transformers >= 4.43.0",
+    "peft",
+    "wandb >= 0.16.0",
+    "xxhash >= 3.4.0",
+    "lmdb",
+    "rich",
+]
+
+[project.urls]
+Homepage = "https://github.com/BatsResearch/trove"
+Issues = "https://github.com/BatsResearch/trove/issues"
+
+[project.scripts]
+trove-cli = "trove.commands.trove_cli:main"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+known_third_party = "wandb"
