@@ -18,7 +18,13 @@ It aims to keep the codebase simple and hackable, while offering a clean, unifie
 
     <p align="center"><img width=300 alt="Trove Logo" src="https://huggingface.co/datasets/BatsResearch/trove-lib-documentation-assets/resolve/main/logo/main.png"/></p>
 
-To get started, install Trove with ``pip``:
+Install Trove from PyPI:
+
+.. code-block:: bash
+
+    pip install ir-trove
+
+To get the latest changes, install from source:
 
 .. code-block:: bash
 

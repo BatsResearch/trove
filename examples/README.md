@@ -2,14 +2,20 @@
 
 This directory contains simple example scripts for training, evaluation, and hard negative mining with Trove.
 
-First, install Trove with pip:
+First, install Trove with `pip`:
+
+```bash
+pip install ir-trove
+```
+
+To get the latest changes, install from source:
 
 ```bash
 pip install git+https://github.com/BatsResearch/trove
 ```
 
 There are other features and command line options that are not used in these examples.
-Read the documentation for all options and features.
+Read the [documentation](https://batsresearch.github.io/trove/) for all options and features.
 
 ## Training
 

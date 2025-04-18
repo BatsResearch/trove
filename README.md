@@ -11,7 +11,7 @@ ______________________________________________________________________
 Trove is a lightweight toolkit for training and evaluating transformer-based dense retrievers.
 It aims to keep the codebase simple and hackable, while offering a clean, unified interface for quickly experimenting with new ideas.
 
-Key features:
+**Key features**:
 
 - Well-documented and easy-to-understand codebase
 - Simple, modular design that's easy to extend and integrate into different workflows
@@ -19,9 +19,19 @@ Key features:
 - Built to work seamlessly with the Hugging Face ecosystem (e.g., PEFT methods, distributed training/inference)
 - Effortless manipulation and combination of multiple datasets on-the-fly
 
+[🎓 **Documentation**](https://batsresearch.github.io/trove/)
+
+[📚 **Examples**](https://github.com/BatsResearch/trove/tree/main/examples)
+
 ## Quick Tour
 
-Install Trove using pip:
+Install Trove from PyPI:
+
+```bash
+pip install ir-trove
+```
+
+To get the latest changes, install from source:
 
 ```bash
 pip install git+https://github.com/BatsResearch/trove
