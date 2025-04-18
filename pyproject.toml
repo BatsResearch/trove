@@ -3,8 +3,7 @@ requires = ["setuptools>=77.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "trove"
-version = "0.0.1"
+name = "ir-trove"
 authors = [
     { name = "Reza Esfandiarpoor", email = "reza_esfandiarpoor@brown.edu" },
 ]
@@ -16,6 +15,9 @@ classifiers = [
 ]
 license = "Apache-2.0"
 license-files = ["LICEN[CS]E*"]
+dynamic = [
+  "version",
+]
 
 requires-python = ">=3.10"
 dependencies = [
@@ -35,6 +37,9 @@ dependencies = [
     "lmdb",
     "rich",
 ]
+
+[tool.setuptools.dynamic]
+version = { attr = "trove.__version__" }
 
 [project.urls]
 Homepage = "https://github.com/BatsResearch/trove"
