@@ -8,7 +8,7 @@ from datasets.fingerprint import Hasher
 
 ## Defaults
 
-LOG_LEVEL = "WARNING"
+LOG_LEVEL = "INFO"
 # disable rich log handler
 TROVE_LOGGING_DISABLE_RICH = False
 # disable logging module

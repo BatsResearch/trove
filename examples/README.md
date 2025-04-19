@@ -134,6 +134,40 @@ We do not need to create two separate scripts to train with and without task ins
 We can use command line arguments to choose the appropriate encoder class.
 If we just run `train_with_task_instructions.py` with `--encoder_class=default` it behaves exactly the same as `train_simple.py`. So we can use the same script for both training setups.
 
+**Train on Combined Data Sources**
+
+`train_combined_data_sources.py` combines three data sources and trains the model with KL divergence loss.
+
+For each query: it 1) selects all synthetic passages with graduated labels (i.e., possible labels are `{0, 1, 2, 3}`), 2) selects the real annotated positives and assigns them label `3` before merging, 3) selects two BM25 mined hard negatives and assigns them label `1` before merging.
+
+```bash
+deepspeed --include localhost:0,1 train_combined_data_sources.py \
+    --deepspeed 'deepspeed_config.json' \
+    --output_dir './model_output/mycontriever' \
+    --model_name_or_path 'facebook/contriever' \
+    --encoder_class 'default' \
+    --pooling 'mean' \
+    --normalize 'no' \
+    --loss 'kl' \
+    --temperature '1.0' \
+    --trust_remote_code 'true' \
+    --group_size 7 \
+    --passage_selection_strategy='random' \
+    --query_max_len 32 \
+    --passage_max_len 128 \
+    --report_to 'wandb' \
+    --save_strategy 'epoch' \
+    --per_device_train_batch_size 16 \
+    --learning_rate '1e-5' \
+    --num_train_epochs 1 \
+    --logging_steps 1 \
+    --gradient_accumulation_steps 4 \
+    --warmup_ratio '0.05' \
+    --dataloader_num_workers 2 \
+    --save_only_model true \
+    --trove_logging_mode 'local_main'
+```
+
 ## Evaluation
 
 `inference.py` evaluates a model and reports the IR metrics.

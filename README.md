@@ -23,6 +23,8 @@ It aims to keep the codebase simple and hackable, while offering a clean, unifie
 
 [📚 **Examples**](https://github.com/BatsResearch/trove/tree/main/examples)
 
+⭐ Check out our recent [paper](https://www.arxiv.org/abs/2503.23239) (and [code](https://github.com/BatsResearch/sycl)) to see how Trove's data manipulation capabilities enable us to train retrievers with synthetic multi-level ranking contexts.
+
 ## Quick Tour
 
 Install Trove from PyPI:
@@ -38,6 +40,8 @@ pip install git+https://github.com/BatsResearch/trove
 ```
 
 ### Training
+
+> [Documentation](https://batsresearch.github.io/trove/guides/training.html)
 
 Train with binary labels:
 
@@ -69,7 +73,27 @@ dataset = MultiLevelDataset(data_args=data_args, qrel_config=conf, format_query=
 ...
 ```
 
+### Data Manipulation
+
+> [Documentation](https://batsresearch.github.io/trove/guides/data.html)
+
+Manipulate and combine multiple data sources with just a few lines of code.
+The following snippet combines a multi-level synthetic dataset (with labels `{0, 1, 2, 3}`) with real annotated positives and two mined hard negatives per query.
+Before merging, it also reassigns the label values: real positives are labeled `3`, and mined negatives are labeled `1`.
+
+```python
+...
+real_pos = MaterializedQRelConfig(min_score=1, score_transform=3, corpus_path="real_corpus.jsonl", qrel_path="qrels/train.tsv", query_path="queries.jsonl")
+mined_neg = MaterializedQRelConfig(group_random_k=2, score_transform=1, corpus_path="real_corpus.jsonl", qrel_path="mined_qrel.tsv", query_path="queries.jsonl")
+synth_data = MaterializedQRelConfig(corpus_path="corpus_multilevel_synth.jsonl", qrel_path="qrel_multilevel_synth.tsv", query_path="queries.jsonl")
+
+dataset = MultiLevelDataset(qrel_config=[real_pos, mined_neg, synth_data], data_args=data_args, format_query=model.format_query, format_passage=model.format_passage)
+...
+```
+
 ### Inference
+
+> [Documentation](https://batsresearch.github.io/trove/guides/inference.html)
 
 **Evaluation:** Calculate IR metrics
 
