@@ -4,7 +4,7 @@ _A Flexible Toolkit for Dense Retrieval_
 
 <br>
 
-<p align="center"><img width=300 alt="Trove Logo" src="https://huggingface.co/datasets/BatsResearch/trove-lib-documentation-assets/resolve/main/logo/main.png"/></p>
+<p align="center"><img width=300 alt="Trove Logo" src="https://huggingface.co/datasets/BatsResearch/trove-lib-documentation-assets/resolve/main/logo/logo_no_background.svg"/></p>
 
 ______________________________________________________________________
 

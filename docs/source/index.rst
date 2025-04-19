@@ -16,7 +16,9 @@ It aims to keep the codebase simple and hackable, while offering a clean, unifie
 
 .. raw:: html
 
-    <p align="center"><img width=300 alt="Trove Logo" src="https://huggingface.co/datasets/BatsResearch/trove-lib-documentation-assets/resolve/main/logo/main.png"/></p>
+   </br>
+
+    <p align="center"><img width=300 alt="Trove Logo" src="https://huggingface.co/datasets/BatsResearch/trove-lib-documentation-assets/resolve/main/logo/logo_no_background.svg"/></p>
 
 Install Trove from PyPI:
 

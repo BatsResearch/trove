@@ -68,3 +68,5 @@ html_theme_options = {
         },
     ],
 }
+
+html_favicon = "https://huggingface.co/datasets/BatsResearch/trove-lib-documentation-assets/resolve/main/logo/favicon.svg"
