@@ -14,6 +14,8 @@ Trove documentation
 Trove is a flexible toolkit for training and evaluating dense retrievers.
 It aims to keep the codebase simple and hackable, while offering a clean, unified interface for quickly experimenting with new ideas.
 
+Repo: :raw-html:`<a href="https://github.com/BatsResearch/trove" target="_blank">BatsResearch/trove</a>`
+
 .. raw:: html
 
    </br>
