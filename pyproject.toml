@@ -34,7 +34,6 @@ dependencies = [
     "peft",
     "wandb >= 0.16.0",
     "xxhash >= 3.4.0",
-    "lmdb",
     "rich",
 ]
 

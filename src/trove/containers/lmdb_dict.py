@@ -7,8 +7,6 @@ import os
 from pathlib import Path
 from typing import Any, Callable, Iterable, Optional, Tuple
 
-import lmdb
-
 from .. import file_utils
 
 
@@ -71,7 +69,7 @@ class LMDBDict:
 
     def __init__(
         self,
-        env: lmdb.Environment,
+        env: Any,
         encode_key: Optional[Callable[[Any], bytes]] = None,
         decode_key: Optional[Callable[[bytes], Any]] = None,
         encode_value: Optional[Callable[[Any], bytes]] = None,
@@ -119,6 +117,8 @@ class LMDBDict:
         Returns:
             an instance of LMDBDict populated with the data from the given db file.
         """
+        import lmdb
+
         if not Path(db_file).exists():
             msg = f"DB file does not exists:\n{db_file}"
             raise RuntimeError(msg)
@@ -191,6 +191,8 @@ class LMDBDict:
         Returns:
             hash of the created database file.
         """
+        import lmdb
+
         # just to avoid extra if statements in this function
         if encode_key is None:
             encode_key = lambda x: x
