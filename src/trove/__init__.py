@@ -32,4 +32,4 @@ from .modeling import (
 )
 from .trainer import RetrievalTrainer, RetrievalTrainingArguments
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
