@@ -115,7 +115,7 @@ class LMDBDict:
                 If not provided, this class returns the saved dict value which is of type ``bytes``.
 
         Returns:
-            an instance of LMDBDict populated with the data from the given db file.
+            An instance of LMDBDict populated with the data from the given db file.
         """
         import lmdb
 
