@@ -39,6 +39,26 @@ To get the latest changes, install from source:
 pip install git+https://github.com/BatsResearch/trove
 ```
 
+Import the necessary modules for training and evaluation:
+
+```python
+from transformers import AutoTokenizer, HfArgumentParser
+from trove import (
+    BiEncoderRetriever,
+    BinaryDataset,
+    DataArguments,
+    EvaluationArguments,
+    MaterializedQRelConfig,
+    ModelArguments,
+    MultiLevelDataset,
+    RetrievalCollator,
+    RetrievalEvaluator,
+    RetrievalTrainer,
+    RetrievalTrainingArguments,
+)
+```
+
+
 ### Training
 
 > [Documentation](https://batsresearch.github.io/trove/guides/training.html)
@@ -46,9 +66,6 @@ pip install git+https://github.com/BatsResearch/trove
 Train with binary labels:
 
 ```python
-from transformers import AutoTokenizer, HfArgumentParser
-from trove import *
-
 parser = HfArgumentParser((RetrievalTrainingArguments, ModelArguments, DataArguments))
 train_args, model_args, data_args = parser.parse_args_into_dataclasses()
 
@@ -98,9 +115,6 @@ dataset = MultiLevelDataset(qrel_config=[real_pos, mined_neg, synth_data], data_
 **Evaluation:** Calculate IR metrics
 
 ```python
-from transformers import AutoTokenizer, HfArgumentParser
-from trove import *
-
 parser = HfArgumentParser((EvaluationArguments, ModelArguments, DataArguments))
 eval_args, model_args, data_args = parser.parse_args_into_dataclasses()
 
