@@ -157,7 +157,7 @@ If you use this software, please cite us.
 
 ```bibtex
 @misc{esfandiarpoortrove,
-  author = {Reza Esfandiarpoor and Stephen H. Bach},
+  author = {Reza Esfandiarpoor and Max Zuo and Stephen H. Bach},
   title = {Trove: A Flexible Toolkit for Dense Retrieval},
   year = {2025},
   publisher = {GitHub},
