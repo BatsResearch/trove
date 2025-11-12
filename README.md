@@ -158,13 +158,14 @@ See [huggingface transformers](https://huggingface.co/docs/transformers/en/deeps
 If you use this software, please cite us.
 
 ```bibtex
-@misc{esfandiarpoortrove,
-  author = {Reza Esfandiarpoor and Max Zuo and Stephen H. Bach},
-  title = {Trove: A Flexible Toolkit for Dense Retrieval},
-  year = {2025},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/BatsResearch/trove}}
+@misc{trove,
+      title={Trove: A Flexible Toolkit for Dense Retrieval}, 
+      author={Reza Esfandiarpoor and Max Zuo and Stephen H. Bach},
+      year={2025},
+      eprint={2511.01857},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2511.01857},
 }
 ```
 
