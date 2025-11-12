@@ -23,6 +23,8 @@ It aims to keep the codebase simple and hackable, while offering a clean, unifie
 
 [📚 **Examples**](https://github.com/BatsResearch/trove/tree/main/examples)
 
+[📄 **Paper**](https://arxiv.org/abs/2511.01857)
+
 ⭐ Check out our recent [paper](https://www.arxiv.org/abs/2503.23239) (and [code](https://github.com/BatsResearch/sycl)) to see how Trove's data manipulation capabilities enable us to train retrievers with synthetic multi-level ranking contexts.
 
 ## Quick Tour
